@@ -13,7 +13,7 @@
 	<property name="rsrc" value="${basedir}/rsrc" />
 	<property name="rslt" value="${basedir}/junit_results" />
 	<property name="tst" value="${basedir}/tst" />
-	<property name="tests" value="net.scientifichooliganism.pc.FizzBuzzTest" />
+	<property name="tests" value="**/*Test*.class" />
 	<property name="info.txt" value="${basedir}/info.txt" />
 	<property name="jarbasename" value="programming_challenges" />
 	<property name="jarextension" value=".jar" />
@@ -198,14 +198,11 @@
 				<pathelement path="${tst}" />
 			</classpath>
 			<formatter type="xml" />
-			<test name="${tests}" todir="${rslt}" />
-			<!--batchtest todir="${rslt}" skipNonTests="true">
-				<pathconvert>
-					<fileset dir="${tests}">
-						<include name="**/*Test*.class" />
-					</fileset>
-				</pathconvert>
-			</batchtest-->
+			<batchtest todir="${rslt}">
+				<fileset dir="${tst}">
+					<include name="${tests}" />
+				</fileset>
+			</batchtest>
 		</junit>
 	</target>
 

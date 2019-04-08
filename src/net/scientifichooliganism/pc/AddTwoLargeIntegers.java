@@ -9,20 +9,18 @@ public class AddTwoLargeIntegers {
 		int carry = 0;
 
 		if ((position < in1.length()) && (position < in2.length())) {
-			carry += (Integer.parseUnsignedInt(in1[position]) + Integer.parseUnsignedInt(in2[position]));
+			carry += (Integer.parseUnsignedInt(in1.substring(position, 1) + Integer.parseUnsignedInt(in2.substring(position, 1))));
 			String temp = String.valueOf(carry);
 			//this should always be zero or one, but to play it safe we use length() - 1
-			ret = (temp[temp.length() - 1]) + ret;
+			ret = temp.substring((temp.length() - 1), 0) + ret;
 
 			if (temp.length() > 1) {
-				carry = Integer.parseUnsignedInt(temp[0]);
+				carry = Integer.parseUnsignedInt(temp.substring(0, 1));
 			}
 			else {
 				carry = 0;
 			}
 		}
-
-		//
 
 		return ret;
 	}
