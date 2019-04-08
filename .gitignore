@@ -1,0 +1,7 @@
+/junit_results
+/lib
+/bin
+/doc
+/jar
+/*.txt
+*.class
