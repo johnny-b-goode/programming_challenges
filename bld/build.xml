@@ -198,7 +198,7 @@
 				<pathelement path="${tst}" />
 			</classpath>
 			<formatter type="xml" />
-			<batchtest todir="${rslt}">
+			<batchtest todir="${rslt}" haltonerror="false" haltonfailure="false" skipNonTests="true">
 				<fileset dir="${tst}">
 					<include name="${tests}" />
 				</fileset>
